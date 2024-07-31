@@ -1,0 +1,66 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Django Server",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "shell": {
+                    "executable": "PowerShell",
+                    "args": [
+                        "-NoProfile",
+                        "-Command"
+                    ]
+                },
+            },
+            "command": ".venv/Scripts/activate; cd be_soarblog; python manage.py makemigrations; python manage.py migrate; python manage.py runserver 192.168.0.13:8000",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [],
+            "isBackground": true,
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "Run Vue Development Server",
+            "type": "shell",
+            "command": "npm run dev",
+            "options": {
+                "cwd": "${workspaceFolder}/fe_soarblog",
+                "shell": {
+                    "executable": "PowerShell",
+                    "args": [
+                        "-NoProfile",
+                        "-Command"
+                    ]
+                },
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [],
+            "isBackground": true,
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "Run Blog Project",
+            "dependsOn": [
+                "Run Django Server",
+                "Run Vue Development Server"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ],
+}
