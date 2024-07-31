@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import ImageView from '@/components/ImageView.vue'
+import ImageView from '@/components/responseTimeTest.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
