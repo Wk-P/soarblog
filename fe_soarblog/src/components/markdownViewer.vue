@@ -19,7 +19,7 @@ function fetchMarkdownFile() {
         } else {
             return response.json;
         }
-    }).then((data: string) => {
+    }).then((data: any) => {
         markdownContent.value = data;
     });
 };
