@@ -11,12 +11,15 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "highlight.js": "^11.10.0",
+    "markdown-it": "^14.1.0",
     "pinia": "^2.1.7",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
+    "@types/markdown-it": "^14.1.2",
     "@types/node": "^20.14.13",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vue/tsconfig": "^0.5.1",
